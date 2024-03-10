@@ -45,6 +45,7 @@ class FeedbackController extends Controller
 
         $feedback = new Feedback();
         $feedback->name = $request->name;
+        $feedback->title = $request->name;
         $feedback->position = $request->position;
         $feedback->description = $request->description;
         $feedback->save();
@@ -94,6 +95,7 @@ class FeedbackController extends Controller
 
         $feedback = Feedback::findOrFail($id);
         $feedback->name = $request->name;
+        $feedback->title = $request->name;
         $feedback->position = $request->position;
         $feedback->description = $request->description;
         $feedback->save();

@@ -28,7 +28,7 @@
                                    Seo Title
                                 </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="title" class="form-control" value="{{ $seo->title }}">
+                                    <input type="text" name="title" class="form-control" value="{{ $seo?->title }}">
                                 </div>
                             </div> 
 
@@ -37,7 +37,7 @@
                                    Seo Description
                                 </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <textarea name="description" class="form-control" style="height: 100px">{{ $seo->description }}</textarea>
+                                    <textarea name="description" class="form-control" style="height: 100px">{{ $seo?->description }}</textarea>
                                 </div>
                             </div>
 
@@ -46,7 +46,7 @@
                                     Seo Keywords
                                 </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="keywords" class="form-control" value="{{ $seo->keywords }}">
+                                    <input type="text" name="keywords" class="form-control" value="{{ $seo?->keywords }}">
                                     <code>Keywords will be comma separated!</code>
                                 </div>
                             </div> 

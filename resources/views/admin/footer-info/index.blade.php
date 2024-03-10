@@ -28,7 +28,7 @@
                                     Info
                                 </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <textarea name="info" class="form-control" style="height: 100px">{{ $footerinfo->info }}</textarea>
+                                    <textarea name="info" class="form-control" style="height: 100px">{{ $footerinfo?->info }}</textarea>
                                 </div>
                             </div>
 
@@ -37,7 +37,7 @@
                                     Copy right
                                 </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="copy_right" class="form-control" value="{{ $footerinfo->copy_right }}">
+                                    <input type="text" name="copy_right" class="form-control" value="{{ $footerinfo?->copy_right }}">
                                 </div>
                             </div>
 
@@ -46,7 +46,7 @@
                                     Powered By
                                 </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="powered_by" class="form-control" value="{{ $footerinfo->powered_by }}">
+                                    <input type="text" name="powered_by" class="form-control" value="{{ $footerinfo?->powered_by }}">
                                 </div>
                             </div>
  

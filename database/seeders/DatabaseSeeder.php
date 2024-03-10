@@ -17,6 +17,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        
+        User::create([
+            'name' => 'Administator',
+            'email' => 'admin@mail.com',
+            'email_verified_at' => now(),
+            'password' => bcrypt('password'),
+        ]);
     }
 }

@@ -16,13 +16,11 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Create Footer Useful Link </h4>
+                        <h4>Create Footer Useful Link</h4>
                     </div>
                     <div class="card-body">
                         <form action="{{ route('admin.footer-useful-links.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-
-                          
 
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">

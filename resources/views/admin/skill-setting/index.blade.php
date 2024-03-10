@@ -27,7 +27,7 @@
                                     Title
                                 </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="title" class="form-control" value="{{ $skillsetting->title }}">
+                                    <input type="text" name="title" class="form-control" value="{{ $skillsetting?->title }}">
                                 </div>
                             </div>
 
@@ -36,7 +36,7 @@
                                     Sub Title
                                 </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <textarea name="sub_title" class="form-control" style="height: 100px">{!! $skillsetting->sub_title !!}</textarea>
+                                    <textarea name="sub_title" class="form-control" style="height: 100px">{!! $skillsetting?->sub_title !!}</textarea>
                                 </div>
                             </div> 
 
@@ -70,7 +70,7 @@
 <script>
     $(document).ready(function() {
         $('#image-preview').css({
-            'background-image': 'url("{{ asset($skillsetting->image) }}")'
+            'background-image': 'url("{{ asset($skillsetting?->image) }}")'
             , 'background-size': 'cover'
             , 'background-position': 'center center'
         })

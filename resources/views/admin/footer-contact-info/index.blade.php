@@ -16,21 +16,19 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Update Footer Contact Information </h4>
+                        <h4>Update Footer Contact Information</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('admin.footer-contact-info.update',1) }}" method="POST" enctype="multipart/form-data">
+                        <form action="{{ route('admin.footer-contact-info.update', 1) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
-
-                         
 
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">
                                     Address
                                 </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="address" class="form-control" value="{{ $contact->address }}">
+                                    <input type="text" name="address" class="form-control" value="{{ $contact?->address }}">
                                 </div>
                             </div>
 
@@ -39,7 +37,7 @@
                                     Phone
                                 </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="phone" class="form-control" value="{{ $contact->phone }}">
+                                    <input type="text" name="phone" class="form-control" value="{{ $contact?->phone }}">
                                 </div>
                             </div>
 
@@ -48,7 +46,7 @@
                                     Email
                                 </label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="text" name="email" class="form-control" value="{{ $contact->email }}">
+                                    <input type="text" name="email" class="form-control" value="{{ $contact?->email }}">
                                 </div>
                             </div>
  

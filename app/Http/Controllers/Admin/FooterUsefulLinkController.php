@@ -37,19 +37,19 @@ class FooterUsefulLinkController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request ,$id)
+    public function store(Request $request)
     {
         $request->validate([
             'name' =>['required','max:200'],
             'url' =>['required']
         ]);
-
-        $link = FooterUsefulLink::finOrdFail($id);
+        
+        $link = new FooterUsefulLink();
         $link->name = $request->name;
         $link->url = $request->url;
         $link->save();
 
-        toastr('Updated Successfully', 'success');
+        toastr('Created Successfully', 'success');
         return redirect()->route('admin.footer-useful-links.index');
     }
 
