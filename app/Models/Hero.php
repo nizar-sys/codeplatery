@@ -16,4 +16,11 @@ class Hero extends Model
         'btn_url',
         'image'
     ];
+
+    protected $appends = ['image_path'];
+
+    public function getImagePathAttribute()
+    {
+        return asset($this->image);
+    }
 }

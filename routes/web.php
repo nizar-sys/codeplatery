@@ -41,7 +41,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[DashboardController::class, 'index'])->middleware('auth')->name('home');
+Route::get('/',[HomeController::class, 'index'])->name('home');
 Route::get('portfolio-details/{id}', [HomeController::class, 'showPortfolio'])->name('show.portfolio');
 Route::get('blog-details/{id}', [HomeController::class, 'showBlog'])->name('show.blog');
 Route::get('blogs', [HomeController::class, 'blog'])->name('blog'); 

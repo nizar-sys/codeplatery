@@ -15,4 +15,6 @@ class About extends Model
         'image',
         'resume'
     ];
+
+    protected $appends = [];
 }
