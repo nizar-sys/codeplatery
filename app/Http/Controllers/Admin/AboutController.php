@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Models\About;
 use Illuminate\Http\Request;
@@ -80,8 +81,8 @@ class AboutController extends Controller
         ]); 
 
         $about = About::first();
-        $imagePath = handleUpload('image', $about);
-        $resumePath = handleUpload('resume', $about);
+        $imagePath = Helper::handleUpload('image', $about);
+        $resumePath = Helper::handleUpload('resume', $about);
 
         About::updateOrCreate(
             ['id' => $id],

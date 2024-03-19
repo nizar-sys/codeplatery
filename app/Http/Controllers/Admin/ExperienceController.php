@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Models\Experience;
 use Illuminate\Http\Request;
@@ -80,7 +81,7 @@ class ExperienceController extends Controller
         ]);
 
         $experience = Experience::first();
-        $imagePath = handleUpload('image', $experience);
+        $imagePath = Helper::handleUpload('image', $experience);
 
         Experience::updateOrCreate(
             ['id' => $id],

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Models\SkillSectionSetting;
 use Illuminate\Http\Request;
@@ -78,7 +79,7 @@ class SkillSectionSettingController extends Controller
         ]);
 
         $skill = SkillSectionSetting::first();
-        $imagePath = handleUpload('image', $skill);
+        $imagePath = Helper::handleUpload('image', $skill);
 
         SkillSectionSetting::updateOrCreate(
             ['id' => $id],

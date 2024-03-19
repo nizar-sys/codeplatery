@@ -150,7 +150,7 @@
             {{--Contact --}}
 
             {{-- footer --}}
-            <li class="nav-item dropdown {{ setSidebarActive([
+            <li class="nav-item dropdown {{ Helper::setSidebarActive([
                 'admin.footer-social.*',
                 'admin.footer-info.*',
                 'admin.footer-contact-info.*',
@@ -161,11 +161,11 @@
                     <span>Footer</span>
                 </a>
                 <ul class="dropdown-menu" style="display: none;">
-                    <li class="{{setSidebarActive(['admin.footer-social.*'])}}"><a class="nav-link" href="{{ route('admin.footer-social.index') }}">Social Links</a></li>
-                    <li class="{{setSidebarActive(['admin.footer-info.*'])}}"><a class="nav-link" href="{{ route('admin.footer-info.index') }}">Footer Information</a></li>
-                    <li class="{{setSidebarActive(['admin.footer-contact-info.*'])}}"><a class="nav-link" href="{{ route('admin.footer-contact-info.index') }}">Footer Contact Info</a></li>
-                    <li class="{{ setSidebarActive(['admin.footer-useful-links.*']) }}"><a class="nav-link" href="{{ route('admin.footer-useful-links.index') }}">Footer Useful Link</a></li>
-                    <li class="{{ setSidebarActive(['admin.footer-help-links.*']) }}"><a class="nav-link" href="{{ route('admin.footer-help-links.index') }}">Footer Help Link</a></li>
+                    <li class="{{Helper::setSidebarActive(['admin.footer-social.*'])}}"><a class="nav-link" href="{{ route('admin.footer-social.index') }}">Social Links</a></li>
+                    <li class="{{Helper::setSidebarActive(['admin.footer-info.*'])}}"><a class="nav-link" href="{{ route('admin.footer-info.index') }}">Footer Information</a></li>
+                    <li class="{{Helper::setSidebarActive(['admin.footer-contact-info.*'])}}"><a class="nav-link" href="{{ route('admin.footer-contact-info.index') }}">Footer Contact Info</a></li>
+                    <li class="{{ Helper::setSidebarActive(['admin.footer-useful-links.*']) }}"><a class="nav-link" href="{{ route('admin.footer-useful-links.index') }}">Footer Useful Link</a></li>
+                    <li class="{{ Helper::setSidebarActive(['admin.footer-help-links.*']) }}"><a class="nav-link" href="{{ route('admin.footer-help-links.index') }}">Footer Help Link</a></li>
                 </ul>
             </li>
             {{--footer --}}
@@ -173,7 +173,7 @@
             <li class="menu-header">Settings</li>
 
             {{-- Setting --}}
-            <li class="{{ setSidebarActive(['admin.setting.*']) }}">
+            <li class="{{ Helper::setSidebarActive(['admin.setting.*']) }}">
                 <a class="nav-link" href="{{ route('admin.setting.index') }}"><i class="far fa-square"></i>
                     <span>Settings</span>
                 </a>

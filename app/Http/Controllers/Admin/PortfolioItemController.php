@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\DataTables\PortfolioItemDataTable;
+use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Models\Category; 
 use App\Models\PortfolioItem;
@@ -48,7 +49,7 @@ class PortfolioItemController extends Controller
             // 'website' => ['url']
         ]);
 
-        $imagePath = handleUpload('image');
+        $imagePath = Helper::handleUpload('image');
 
         $portfolioItem = new PortfolioItem();
         $portfolioItem->image = $imagePath;
@@ -108,7 +109,7 @@ class PortfolioItemController extends Controller
 
         $portfolioItem =  PortfolioItem::findOrFail($id);
 
-        $imagePath = handleUpload('image', $portfolioItem);
+        $imagePath = Helper::handleUpload('image', $portfolioItem);
 
         $portfolioItem->image = (!empty($imagePath) ? $imagePath : $portfolioItem->image);
         $portfolioItem->title = $request->title;

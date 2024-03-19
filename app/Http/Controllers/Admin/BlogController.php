@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\DataTables\BlogDataTable;
+use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
 use App\Models\BlogCategory;
@@ -46,7 +47,7 @@ class BlogController extends Controller
             'category' => ['required', 'numeric']
         ]);
 
-        $imagePath = handleUpload('image');
+        $imagePath = Helper::handleUpload('image');
 
         $blog = new Blog();
         $blog->image = $imagePath;
@@ -102,7 +103,7 @@ class BlogController extends Controller
         ]);
 
         $blog = Blog::findOrfail($id);
-        $imagePath = handleUpload('image', $blog);
+        $imagePath = Helper::handleUpload('image', $blog);
 
         $blog->image = (!empty($imagePath) ? $imagePath : $blog->image);
         $blog->title = $request->title;

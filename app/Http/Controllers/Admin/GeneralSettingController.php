@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Models\GeneralSetting;
 use Illuminate\Http\Request;
@@ -78,9 +79,9 @@ class GeneralSettingController extends Controller
         ]);
 
         $setting = GeneralSetting::first();
-        $logo = handleUpload('logo', $setting);
-        $footer_logo = handleUpload('footer_logo', $setting);
-        $favicon = handleUpload('favicon', $setting);
+        $logo = Helper::handleUpload('logo', $setting);
+        $footer_logo = Helper::handleUpload('footer_logo', $setting);
+        $favicon = Helper::handleUpload('favicon', $setting);
 
         $generalSetting =   GeneralSetting::findOrFail($id);
         $generalSetting->logo = (!empty($logo)) ? $logo : $setting->logo;
