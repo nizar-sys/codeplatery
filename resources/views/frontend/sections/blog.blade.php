@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-lg-6 offset-lg-3 text-center">
                 <div class="section-title">
-                    <h3 class="title">{{$blogTitle->title}}</h3>
+                    <h3 class="title">{{$blogTitle?->title}}</h3>
                     <div class="desc">
-                        {{$blogTitle->sub_title}}
+                        {{$blogTitle?->sub_title}}
                     </div>
                 </div>
             </div>

@@ -5,9 +5,9 @@
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="section-title">
-                            <h3 class="title">{{  $skill->title }}</h3>
+                            <h3 class="title">{{ $skill?->title }}</h3>
                             <div class="desc">
-                                <p>{!!  $skill->sub_title !!}</p>
+                                <p>{!!  $skill?->sub_title !!}</p>
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
             
             <div class="col-lg-6 d-none d-lg-block">
                 <figure class="single-image text-right wow fadeInRight">
-                    <img src="{{ asset($skill->image) }}" alt="">
+                    <img src="{{ asset($skill?->image) }}" alt="">
                 </figure>
             </div>
         </div>
