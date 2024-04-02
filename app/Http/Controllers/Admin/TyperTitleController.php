@@ -46,8 +46,7 @@ class TyperTitleController extends Controller
         $create->title = $request->title;
         $create->save();
 
-        toastr()->success('Created Successfully', 'Congrats');
-        return redirect()->route('admin.typer-title.index');
+        return redirect()->route('admin.typer-title.index')->with('success', 'Crerated successfully');
     }
 
     /**
@@ -89,9 +88,8 @@ class TyperTitleController extends Controller
         $edit = TyperTitle::findOrFail($id);
         $edit->title = $request->title;
         $edit->save();
-        toastr()->success('Updated Successfully','Congrats');
 
-        return redirect()->route('admin.typer-title.index');
+        return redirect()->route('admin.typer-title.index')->with('success', 'Updated successfully');
     }
 
     /**
