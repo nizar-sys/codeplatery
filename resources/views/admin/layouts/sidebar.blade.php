@@ -4,7 +4,7 @@
     <ul class="navbar-nav navbar-right">
         <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                 <img alt="image" src="../assets/img/avatar/avatar-1.png" class="rounded-circle mr-1">
-                <div class="d-sm-none d-lg-inline-block">Hi, Ujang Maman</div>
+                <div class="d-sm-none d-lg-inline-block">Hi, {{Auth::user()->name}}</div>
             </a>
             <div class="dropdown-menu dropdown-menu-right">
                 <div class="dropdown-title">Log in 5 min ago</div>
@@ -31,10 +31,10 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('dashboard') }}">Stisla</a>
+            <a href="{{ route('dashboard') }}">Codeplatery</a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ route('dashboard') }}">St</a>
+            <a href="{{ route('dashboard') }}">Cp</a>
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
@@ -174,7 +174,7 @@
 
             {{-- Setting --}}
             <li class="{{ Helper::setSidebarActive(['admin.setting.*']) }}">
-                <a class="nav-link" href="{{ route('admin.setting.index') }}"><i class="far fa-square"></i>
+                <a class="nav-link" href="{{ route('admin.setting.index') }}"><i class="far fa-cog"></i>
                     <span>Settings</span>
                 </a>
             </li>
