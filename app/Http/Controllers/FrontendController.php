@@ -19,7 +19,7 @@ class FrontendController extends Controller
             $footerUsefulLinks = \App\Models\FooterUsefulLink::all('name', 'url');
             $footerContact = \App\Models\FooterContactInfo::first(['address', 'phone', 'email']);
             $footerHelpLinks = \App\Models\FooterHelpLink::all('name', 'url');
-            $about = About::first();
+            $about = About::first(['id', 'title', 'description', 'resume', 'image']);
 
             return response()->json([
                 'status' => 'success',

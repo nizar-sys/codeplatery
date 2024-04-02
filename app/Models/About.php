@@ -16,5 +16,18 @@ class About extends Model
         'resume'
     ];
 
-    protected $appends = [];
+    protected $appends = [
+        'image_url',
+        'resume_url'
+    ];
+
+    public function getImageUrlAttribute()
+    {
+        return asset($this->image);
+    }
+
+    public function getResumeUrlAttribute()
+    {
+        return asset($this->resume);
+    }
 }
