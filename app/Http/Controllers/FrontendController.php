@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\About;
+use App\Models\Category;
 use App\Models\Hero;
+use App\Models\PortfolioItem;
+use App\Models\Service;
 use App\Models\TyperTitle;
 use Illuminate\Http\Request;
 
@@ -20,6 +23,9 @@ class FrontendController extends Controller
             $footerContact = \App\Models\FooterContactInfo::first(['address', 'phone', 'email']);
             $footerHelpLinks = \App\Models\FooterHelpLink::all('name', 'url');
             $about = About::first(['id', 'title', 'description', 'resume', 'image']);
+            $services = Service::all(['id', 'name', 'description']);
+            $portfolioCategories = Category::all(['id', 'name', 'slug']);
+            $portfolioItems = PortfolioItem::with('category')->get();
 
             return response()->json([
                 'status' => 'success',
@@ -32,6 +38,13 @@ class FrontendController extends Controller
                     'footer_contact' => $footerContact,
                     'footer_help_links' => $footerHelpLinks,
                     'about_me' => $about,
+                    'services' => $services,
+                    'portfolio' => [
+                        'title' => 'Portfolio',
+                        'description' => 'Check out my latest projects',
+                        'categories' => $portfolioCategories,
+                        'items' => $portfolioItems
+                    ],
                 ]
             ]);
         } catch (\Exception $e) {
